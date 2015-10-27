@@ -18,4 +18,7 @@
 //= require angular
 //= require bootstrap.min
 //= require suggest.min
-//= require_tree .
+//= require controllers/app
+
+
+
