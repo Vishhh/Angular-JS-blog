@@ -1,29 +1,14 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require angular-resource
-//= require angular-strap.min
+//= require jquery.min
+//= require suggest.min
 //= require angular
 //= require bootstrap.min
-//= require suggest.min
+//= require angular-strap.min
+//= require angular-resource
+//= require services/sessionService
+//= require services/recordService
 //= require controllers/app
 //= require controllers/record
 //= require controllers/users
-//= require services/recordService
-//= require services/sessionService
-
 
 angular.module('angularapp', ['sessionService','recordService','$strap.directives'])
   .config(['$httpProvider', function($httpProvider){
