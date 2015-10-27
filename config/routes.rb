@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  # root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -26,7 +26,26 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+resources :home, only: [:index]
+  root :to => "home#index"
+  devise_for :users
 
+  namespace :api, defaults: {format: :json} do
+    scope module: :v1 do
+
+      devise_scope :user do
+        match '/sessions' => 'sessions#create', :via => :post
+        match '/sessions' => 'sessions#destroy', :via => :delete
+      end
+
+      resources :record
+
+      resources :users, only: [:create]
+      match '/users' => 'users#show', :via => :get
+      match '/users' => 'users#update', :via => :put
+      match '/users' => 'users#destroy', :via => :delete
+   end
+  end
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

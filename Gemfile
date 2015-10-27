@@ -13,7 +13,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-
+gem 'angular_rails_csrf'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -26,6 +26,8 @@ gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'twitter-bootstrap-rails'
+gem 'nokogiri'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -45,3 +47,7 @@ group :development do
   gem 'spring'
 end
 
+  gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails', '4.2.1'
+  gem 'rspec_api_documentation'
+  gem 'better_errors'
