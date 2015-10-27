@@ -1,4 +1,3 @@
-
 function RecordCtrl($scope, Session, Records) {"use strict";
 
     $scope.user = Session.requestCurrentUser();

@@ -5,4 +5,5 @@ function AppCtrl($scope, Session) {"use strict";
     $scope.$on('event:authenticated', function(event) {
         console.log('authenticated');
     });
+
 }
