@@ -1,5 +1,8 @@
 class Api::V1::BaseController < ActionController::Base
-  protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/vnd.angularapp.v1' }
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/vnd.radd.v1' }
+
   respond_to :json
 
   rescue_from Exception, with: :generic_exception
